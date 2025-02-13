@@ -1,0 +1,26 @@
+@startuml component-diagram
+!theme plain
+
+title CSV Comparison Tool - Component Diagram
+
+package "CSV Comparison Tool" {
+    [CSV Reader] as reader
+    [Comparator] as comp
+    [Excel Report Generator] as report
+    [CLI Interface] as cli
+    
+    database "CSV File 1" as csv1
+    database "CSV File 2" as csv2
+    database "Excel Report" as excel
+}
+
+csv1 --> reader
+csv2 --> reader
+reader --> comp
+comp --> report
+report --> excel
+cli --> reader
+cli --> comp
+cli --> report
+
+@enduml

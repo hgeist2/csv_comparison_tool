@@ -1,0 +1,29 @@
+# PhpStorm
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# VSCode
+.vscode/
+*.code-workspace
+.history/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.env
+venv/
+.venv/
+
+# Logs
+*.log
+
+# Output
+out/
+compare1.sh

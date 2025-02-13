@@ -1,0 +1,41 @@
+@startuml sequence-diagram
+!theme plain
+
+title CSV Comparison Tool - Sequence Diagram
+
+actor User
+participant "CLI Interface" as CLI
+participant "CSV Reader" as Reader
+participant "Comparator" as Comp
+participant "Excel Report Generator" as Report
+
+User -> CLI: Execute with parameters\n(file1.csv, file2.csv)
+activate CLI
+
+CLI -> Reader: Read CSV files
+activate Reader
+Reader -> Reader: Parse file1.csv
+Reader -> Reader: Parse file2.csv
+Reader --> CLI: Return DataFrames
+deactivate Reader
+
+CLI -> Comp: Compare DataFrames
+activate Comp
+Comp -> Comp: Find key differences
+Comp -> Comp: Identify missing rows
+Comp -> Comp: Compare cell values
+Comp --> CLI: Return differences
+deactivate Comp
+
+CLI -> Report: Generate Excel report
+activate Report
+Report -> Report: Create differences sheet
+Report -> Report: Create missing rows sheet
+Report -> Report: Apply highlighting
+Report --> CLI: Save report
+deactivate Report
+
+CLI --> User: Display summary
+deactivate CLI
+
+@enduml 
