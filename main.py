@@ -1,3 +1,6 @@
+# Copyright 2025, Hannes Geist
+# MIT License
+
 import csv
 import argparse
 from openpyxl import Workbook
