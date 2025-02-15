@@ -67,8 +67,50 @@ The tool generates:
 ## Example
 
 ```bash
-python main.py original.csv updated.csv --key-column some_id_column --ignore timestamp modified_by --output comparison.xlsx
+python3 main.py examples/file1.csv examples/file2.csv --key-column col1 --ignore col4 --output examples/comparison-results.xlsx
 ```
+
+**Or just use example.sh:**
+
+```bash
+chmod +x example.sh
+``` 
+
+```bash
+./example.sh
+```
+
+### Results
+
+**Console output:**
+
+![console output](doc/cli-output.webp)
+
+**Results excel file:**
+
+1. We compared based on column 'col1'
+2. We ignored column D, 'col4'
+3. 'col3' is said to only occur in file.csv, since it differs from file2.csv in the key column
+
+![comparison-results.xlsx](doc/comparison-results.webp)
+
+### Example Data
+
+**file1.csv:**
+
+![file1.csv](doc/file1.webp)
+
+**file2.csv:**
+
+![file2.csv](doc/file2.webp)
+
+**comparison-results.xlsx:**
+
+1. We compared based on column 'col1'
+2. We ignored column D, 'col4'
+3. 'col3' is said to only occur in file.csv, since it differs from file2.csv in the key column
+
+![comparison-results.xlsx](doc/comparison-results.webp)
 
 ## Notes
 
@@ -79,11 +121,11 @@ python main.py original.csv updated.csv --key-column some_id_column --ignore tim
 
 ## Sequence Diagram
 
-![Sequence Diagram](sequence-diagram.png)
+![Sequence Diagram](doc/sequence-diagram.png)
 
 ## Components Diagram
 
-![Components Diagram](components-diagram.png)
+![Components Diagram](doc/components-diagram.png)
 
 ## License
 

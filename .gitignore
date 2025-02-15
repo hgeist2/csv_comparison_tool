@@ -24,6 +24,8 @@ venv/
 # Logs
 *.log
 
+*.~lock.*
+
 # Output
 out/
 compare1.sh
